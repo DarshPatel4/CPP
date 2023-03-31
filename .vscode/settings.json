@@ -37,7 +37,19 @@
     "iostream": "cpp",
     "iomanip": "c",
     "ostream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "*.tcc": "cpp",
+    "chrono": "cpp",
+    "ctime": "cpp",
+    "future": "cpp",
+    "limits": "cpp",
+    "numeric": "cpp",
+    "ratio": "cpp",
+    "shared_mutex": "cpp",
+    "streambuf": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp"
   },
   "C_Cpp_Runner.useAddressSanitizer": false,
   "C_Cpp.errorSquiggles": "disabled"
