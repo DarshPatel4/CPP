@@ -5,130 +5,50 @@ factor in float as an input argument. The function will scale the distance
 accordingly. 
 For example, 20’-5.5” and Scale Factor is 0.5 then answer is 10’-2.75”
 */
+//This program is performed by 22CS051_DARSH
 #include<iostream>
 using namespace std;
-class Dist{
-    
-}
-
-
-/*
-#include <iostream>
-using namespace std;
-
-class Date {
-  private:
-    int dd, mm, yyyy;
-
-  public:
-    void input() {
-      cout << "Enter date in the format DD/MM/YYYY: ";
-      scanf("%d/%d/%d", &dd, &mm, &yyyy);
+class Dist
+{
+private:
+    int feet;
+    float inches;
+public:
+    // Member function to enter distance in feet and inches
+    void enter()
+    {
+        cout << "Enter distance in feet: ";
+        cin >> feet;
+        cout << "Enter distance in inches: ";
+        cin >> inches;
     }
-
-    void print() {
-      cout << "Date is: " << dd << "/" << mm << "/" << yyyy << endl;
+    // Member function to display distance in 1'-2.5" format
+    void display()
+    {
+        cout << "Distance: " << feet << "'-" << inches << "\"" << endl;
+        
     }
-
-    friend void swapdates(Date& date1, Date& date2) {
-      Date temp = date1;
-      date1 = date2;
-      date2 = temp;
+    // Member function to scale distance by a given factor
+    void scale(float factor)
+    {
+        float totalInches = feet * 12 + inches; // Convert feet to inches and add inches
+        totalInches *= factor; // Scale the total inches by the factor
+        feet = totalInches / 12; // Convert total inches back to feet
+        inches = totalInches - feet * 12; // Calculate remaining inches
     }
 };
-
-int main() {
-  Date date1, date2;
-
-  cout << "Enter the first date:\n";
-  date1.input();
-  date1.print();
-
-  cout << "Enter the second date:\n";
-  date2.input();
-  date2.print();
-
-  swapdates(date1, date2);
-
-  cout << "\nAfter swapping:\n";
-  cout << "Date 1: ";
-  date1.print();
-  cout << "Date 2: ";
-  date2.print();
-
-  return 0;
+int main()
+{
+    Dist d1; // Create a Dist object
+    d1.enter(); // Enter distance
+    cout << "Original distance: ";
+    d1.display(); // Display original distance
+    float scaleFactor;
+    cout << "Enter scaling factor: ";
+    cin >> scaleFactor; // Enter scaling factor
+    d1.scale(scaleFactor); // Scale the distance
+    cout << "Scaled distance: ";
+    d1.display(); // Display scaled distance
+    cout << "This program is performed by 22CS051_DARSH" << endl;
+    return 0;
 }
-
-*/
-/*#include <iostream>
-using namespace std;
-
-class Tile;
-
-class Land {
-  private:
-    float length, width, area1;
-
-  public:
-    void read() {
-      cout << "Enter length of the land: ";
-      cin >> length;
-      cout << "Enter width of the land: ";
-      cin >> width;
-      area1 = length * width;
-    }
-
-    void display() {
-      cout << "Length of land = " << length << " feet" << endl;
-      cout << "Width of land = " << width << " feet" << endl;
-      cout << "Area of land = " << area1 << " square feet" << endl;
-    }
-
-    friend void Tile::number_of_tiles(Land& land);
-};
-
-class Tile {
-  private:
-    float l, w, area2;
-
-  public:
-    void get_data() {
-      cout << "Enter length of one tile: ";
-      cin >> l;
-      cout << "Enter width of one tile: ";
-      cin >> w;
-      area2 = l * w;
-    }
-
-    void display() {
-      cout << "Length of one tile = " << l << " feet" << endl;
-      cout << "Width of one tile = " << w << " feet" << endl;
-      cout << "Area of one tile = " << area2 << " square feet" << endl;
-    }
-
-    friend void number_of_tiles(Land& land);
-};
-
-void number_of_tiles(Land& land) {
-  float num_tiles = land.area1 / area2;
-  cout << "Number of tiles required to cover the land = " << num_tiles << endl;
-}
-
-int main() {
-  Land land;
-  Tile tile;
-
-  cout << "Enter the details of the land:\n";
-  land.read();
-  land.display();
-
-  cout << "Enter the details of the tile:\n";
-  tile.get_data();
-  tile.display();
-
-  cout << "Calculating the number of tiles required:\n";
-  number_of_tiles(land);
-
-  return 0;
-}
-*/

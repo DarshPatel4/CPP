@@ -1,19 +1,23 @@
-//This program is performed by 22CS051_DARSH
 #include <iostream>
 #include <string>
 using namespace std;
+
 class Batsman {
     private:
         string batsman_name;
-        int bcode,innings,not_out,runs;
+        int bcode, innings, not_out, runs;
         float batting_average;
+        
+        // Private member function to calculate batting average
         inline void calcavg() {
             batting_average = runs / static_cast<float>(innings - not_out);
         }
+        
     public:
+        // Public member function to get input data from user
         void getdata() {
             cout << "Enter batsman name: ";
-            getline(cin >> ws, batsman_name);
+            getline(cin >> ws, batsman_name); // Using getline to allow input with spaces
             cout << "Enter bcode: ";
             cin >> bcode;
             cout << "Enter innings: ";
@@ -22,8 +26,10 @@ class Batsman {
             cin >> not_out;
             cout << "Enter runs: ";
             cin >> runs;
-            calcavg();
+            calcavg(); // Call calcavg to calculate batting average
         }
+        
+        // Public member function to display output data
         void putdata() {
             cout << "Batsman name: " << batsman_name << endl;
             cout << "Bcode: " << bcode << endl;
@@ -33,10 +39,11 @@ class Batsman {
             cout << "Batting average: " << batting_average << endl;
         }
 };
+
 int main() {
     Batsman batsman;
-    batsman.getdata();
-    batsman.putdata();
+    batsman.getdata(); // Call getdata to input data from user
+    batsman.putdata(); // Call putdata to display output data
     cout << "This program is performed by 22CS051_DARSH" << endl;
     return 0;
 }

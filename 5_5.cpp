@@ -3,37 +3,37 @@
 #include <string>
 using namespace std;
 class Gate {
-    int RegNo;//private data
-    string name;//private data
-    string ExamCenter;//private data
-    static int ECV_Cnt,ECS_Cnt,ECA_Cnt;//private data
+    int RegNo;
+    string name;
+    string ExamCenter;
+    static int ECV_Cnt, ECS_Cnt, ECA_Cnt; // Static member variables to count students in different exam centers
 public:
     void getdata() {
         cout << "Enter registration number: ";
-        cin >> RegNo;//registration number
+        cin >> RegNo;
         cout << "Enter name: ";
-        cin >> name;//Name
-        cout << "Enter exam center(Vadodara/Surat/Ahmedabad) : ";
-        cin >> ExamCenter;//exam center
+        cin >> name;
+        cout << "Enter exam center(Vadodara/Surat/Ahmedabad): ";
+        cin >> ExamCenter;
         if (ExamCenter == "Vadodara")
-            ECV_Cnt++;
+            ECV_Cnt++; // Increment Vadodara count if student chooses Vadodara as exam center
         else if (ExamCenter == "Surat")
-            ECS_Cnt++;
+            ECS_Cnt++; // Increment Surat count if student chooses Surat as exam center
         else if (ExamCenter == "Ahmedabad")
-            ECA_Cnt++;
+            ECA_Cnt++; // Increment Ahmedabad count if student chooses Ahmedabad as exam center
     }
-    void putdata()//function for putting data 
-    {
+    void putdata() {
         cout << "Registration number: " << RegNo << endl;
         cout << "Name: " << name << endl;
         cout << "Exam center: " << ExamCenter << endl;
     }
-    static void getcount() {//function for counting data
+    static void getcount() {
         cout << "Total number of students in Vadodara: " << ECV_Cnt << endl;
         cout << "Total number of students in Surat: " << ECS_Cnt << endl;
         cout << "Total number of students in Ahmedabad: " << ECA_Cnt << endl;
     }
 };
+// Initializing static member variables to zero
 int Gate::ECV_Cnt = 0;
 int Gate::ECS_Cnt = 0;
 int Gate::ECA_Cnt = 0;
@@ -41,15 +41,15 @@ int main() {
     const int NumStudents = 5;
     Gate students[NumStudents];
     for (int i = 0; i < NumStudents; i++) {
-        cout << "Enter details of student " << i+1 << ":" << endl;
-        students[i].getdata();
+        cout << "Enter details of student " << i + 1 << ":" << endl;
+        students[i].getdata(); // Get student details from user
         cout << endl;
     }
     cout << "Details of all students:" << endl;
     for (int i = 0; i < NumStudents; i++) {
-        students[i].putdata();
+        students[i].putdata(); // Display student details
         cout << endl;
     }
-    Gate::getcount();
+    Gate::getcount(); // Display total count of students in different exam centers
     return 0;
-}               
+}
