@@ -24,6 +24,6 @@ int main()
 	for(int i=0;i<T;i++)
     {
         cout<<r[i]<<endl;
-    }
-	return 0;
+    }
+	return 0;
 }
