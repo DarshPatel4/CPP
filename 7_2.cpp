@@ -49,3 +49,15 @@ int main() {
     cout << "This program is performed by 22CS052_DARSH" << endl;
     return 0;
 }
+
+
+
+
+
+
+
+
+
+/*
+API key: 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
+    */
