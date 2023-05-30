@@ -25,5 +25,6 @@ class product
         cout<<"Input code and price for product: "; 
         cin>>x>>y; 
         p->getdata(x,y); 
-        d->show(); 
+        d->show();
+        cout<< "This program is performed by 22CS051_DARSH"; 
     }
